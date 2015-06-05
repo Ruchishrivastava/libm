@@ -1,0 +1,39 @@
+<%= form_for([@admin_book]) do |f| %>
+<%= f.select :subject_id, options_for_select(Admin::Subject.all.map{|c| [c.subject_name,c.id]}), :class => 'select required span6' %>
+
+  <% if @admin_book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_book.errors.count, "error") %> prohibited this admin_book from being saved:</h2>
+
+      <ul>
+      <% @admin_book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <div class="field">
+  
+    
+  </div>
+    <%= f.label :book_name %><br>
+    <%= f.text_field :book_name %>
+  </div>
+  <div class="field">
+    <%= f.label :author_name %><br>
+    <%= f.text_field :author_name %>
+  </div>
+
+
+  <div><%= f.file_field :picture %></div><br>
+
+  <div class="actions">
+    <%= f.submit %>
+
+  </div>
+
+<% end %>
+<form>
+  

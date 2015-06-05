@@ -1,0 +1,31 @@
+<% current_user.issues.each do |i| %>
+  <p>
+  <strong>Book name:</strong>
+  <%= i.book.book_name %>
+</p>
+
+<p>
+  <strong>Author name:</strong>
+  <%= i.book.author_name %>
+</p>
+<p>
+<strong>Picture:</strong>
+<%= image_tag(i.book.picture.url(:thumb))%>
+
+<p>
+  <strong> date:</strong>
+  <%= i.current_date %>
+</p>
+
+<p>
+  <strong>Last:</strong>
+  <%= i.last_date %>
+</p>
+
+
+<% end %>
+<%= link_to 'Back', root_path %>
+
+
+
+

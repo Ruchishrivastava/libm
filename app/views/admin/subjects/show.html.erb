@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject name:</strong>
+  <%= @admin_subject.subject_name %>
+</p>
+<% @admin_subject.books.each do |book| %>
+  <p>
+  <strong>Book name:</strong>
+  <%= book.book_name %>
+</p>
+
+<p>
+  <strong>Author name:</strong>
+  <%= book.author_name %>
+</p>
+<p>
+<strong>Picture:</strong>
+<%= image_tag(book.picture.url(:thumb))%>
+</p>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_admin_subject_path(@admin_subject) %> |
+<%= link_to 'Back', admin_subjects_path %>
+
+

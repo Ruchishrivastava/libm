@@ -1,0 +1,29 @@
+
+<%= form_for(@admin_subject) do |f| %>
+  <% if @admin_subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_subject.errors.count, "error") %> prohibited this admin_subject from being saved:</h2>
+
+      <ul>
+      <% @admin_subject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+  <tr class="control-label col-sm-2"><%= f.label :subject_name %>:</tr>
+    <tr class="form-control" placeholder="Enter subject name"><%= f.text_field :subject_name %></tr>
+   
+  </div>
+  </div>
+
+  <div class=" btn-md">
+  <%= f.submit %>
+  </div>
+</div>
+
+<% end %>

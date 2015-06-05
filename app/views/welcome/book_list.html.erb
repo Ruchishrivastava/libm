@@ -1,0 +1,23 @@
+<p>
+  <strong>Subject name:</strong>
+  <%= @admin_subject.subject_name %>
+</p>
+<% @admin_subject.books.each do |book| %>
+  <p>
+  <strong>Book name:</strong>
+  <%= book.book_name %>
+</p>
+
+<p>
+  <strong>Author name:</strong>
+  <%= book.author_name %>
+</p>
+<p>
+<strong>Picture:</strong>
+<%= image_tag(book.picture.url(:thumb))%>
+<%= link_to 'select', new_path(book)  %>
+</p>
+
+<% end %>
+<%= link_to 'Back',root_path %>
+

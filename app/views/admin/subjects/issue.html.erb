@@ -1,0 +1,50 @@
+ <div class="panel panel-default">
+ 	<div class="panel-heading">
+      <h1 class="panel-title"> Issue the book</h1>
+    </div>
+ <div class="panel-body">
+ <table class="table table-hover">	
+<% @user.issues.each do |i| %>
+  <p>
+  <strong>Book name:</strong>
+  <%= i.book.book_name %>
+</p>
+
+<p>
+  <strong>Author name:</strong>
+  <%= i.book.author_name %>
+</p>
+<p>
+<strong>Picture:</strong>
+<%= image_tag(i.book.picture.url(:thumb))%></p>
+
+<p>
+  <strong> date:</strong>
+  <%= i.current_date %>
+</p>
+
+<p>
+  <strong>Last date:</strong>
+  <%= i.last_date %>
+</p>
+
+
+
+
+	<%if i.status ==true || i.status==false %>
+		<% if  i.status == true%>
+		accepted
+		<%else i.status == false%>
+		rejected
+		<% end %>
+	<%else%>
+		<%= link_to 'Accept', admin_accept_path(i)%>
+		<%= link_to 'reject', admin_reject_path(i)%>
+	<%end%>
+<%end%>
+
+<p class="btn btn-default">
+	<%= link_to 'back',admin_users_list_path %>
+</p>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title"> List of User</h1>
+    </div>
+ <div class="panel-body">     
+<table  class="table table-hover">
+  <thead>
+    <tr>
+      <b><th>User_list</th></b>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td ><%= link_to 'user list',admin_path(user) %></td>
+      </tr>
+    <% end %>
+ 
+    
+    
+  </tbody>
+</table>
+</div>
+
+<br>

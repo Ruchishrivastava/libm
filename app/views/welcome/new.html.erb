@@ -1,0 +1,16 @@
+
+  <%= form_for(@admin_issue,  :url => create_path(@admin_book)) do |f| %>
+  
+  <div class="field">
+    <%= f.label :current_date %><br>
+    <%= f.date_select :current_date %>
+  </div>
+  <div class="field">
+    <%= f.label :last_date %><br>
+    <%= f.date_select :last_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
